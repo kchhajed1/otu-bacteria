@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang = "en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Belly Button Diversity Dashboard</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+</head>
+
+<body>
+	<div class="container">
+		<div class="jumbotron text-center">
+			<h1>Belly Button Diversity Dashboard</h1>
+            <p style="text-align: center">Use the interactive charts below to explore the dataset.</p>
+		</div>
+		<div class="container">
+			<div class="row col-md-2" >
+                <div style="border: solid 1px; padding:3px; background-color: #EEE; text-align: center">
+                    <h4><b>Select Sample</b></h4>
+                    <br>
+                    <select id="selDataset" onchange="getData(this.value)" ></select>
+                </div>
+                <br>
+                <div style="border: solid 1px; padding:3px; background-color: #EEE; text-align: left">
+                    <h4><b>Sample MetaData</b></h4>
+                    <p id="sampleMetaData"></p>
+                </div>
+			</div>
+            
+            <div class="row col-md-6">
+                <div id="PieChart"></div>
+			</div>
+            
+			<div class="container col-md-4">
+                <div id="gauge"></div>
+			</div>
+		</div>
+        <div class="container">
+            <div class="row col-md-12">
+            <div id="scatter"></div>
+            </div>
+        </div>
+	</div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.7.3/d3.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    
+</body>
+</html>
+
+
